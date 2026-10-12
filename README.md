@@ -1,5 +1,5 @@
 # Sistem Pengendalian Pembelian Salon
-
+Demo Web: https://novitaduwia.github.io/Sistem-Pengendalian-Pembelian-Salon/ 
 ## Deskripsi
 
 Sistem Pengendalian Pembelian Salon merupakan sistem informasi sederhana yang digunakan untuk membantu usaha salon dalam mengelola pembelian bahan habis pakai serta memantau penggunaan anggaran.
