@@ -63,6 +63,18 @@
             </button>
 
             <button class="menu-item"
+                    onclick="showPage('persediaan')">
+                <span>▦</span>
+                 Persediaan
+            </button>
+
+            <button class="menu-item"
+                    onclick="showPage('pemakaian')">
+                <span>✂</span>
+                Pemakaian Bahan
+            </button>
+
+            <button class="menu-item"
                     onclick="showPage('pengendalian')">
                 <span>◉</span>
                 Pengendalian
@@ -117,82 +129,62 @@
                     <h2>Welcome to Graceslay Salon</h2>
 
                     <p>
-                        <p>
     Kelola pembelian bahan habis pakai, pantau anggaran,
     dan kendalikan pengeluaran salon dalam satu sistem.
 </p>
-                    </p>
                 </div>
 
             </div>
 
 
-            <!-- SUMMARY CARDS -->
+            
+<!-- SUMMARY CARDS -->
+<div class="dashboard-period">
+    <div>
+        <span class="period-label">PERIODE PELAPORAN</span>
+        <h3 id="dashboard-period">Bulan berjalan</h3>
+    </div>
+    <span class="period-status">Laporan bulanan</span>
+</div>
 
-            <div class="summary-grid">
+<div class="summary-grid">
 
-                <div class="summary-card pink-card">
+    <div class="summary-card pink-card">
+    <div class="card-icon" aria-hidden="true">▦</div>
+    <div>
+        <p>Total Bahan</p>
+        <h3 id="total-bahan">0</h3>
+    </div>
+</div>
 
-                    <div class="card-icon">
-                        B
-                    </div>
+    <div class="summary-card purple-card">
+        <div class="card-icon" aria-hidden="true">▤</div>
+        <div>
+            <p>Total Anggaran</p>
+            <h3 id="total-anggaran">Rp0</h3>
+            <small>Periode berjalan</small>
+        </div>
+    </div>
 
-                    <div>
-                        <p>Total Bahan</p>
-                        <h3 id="total-bahan">0</h3>
-                    </div>
+    <div class="summary-card green-card">
+        <div class="card-icon" aria-hidden="true">↗</div>
+        <div>
+            <p>Total Realisasi Pembelian</p>
+            <h3 id="total-realisasi">Rp0</h3>
+            <small>Termasuk pembelian tanpa anggaran</small>
+        </div>
+    </div>
 
-                </div>
+    <div class="summary-card orange-card">
+        <div class="card-icon" aria-hidden="true">◷</div>
+        <div>
+            <p>Sisa Anggaran</p>
+            <h3 id="sisa-anggaran">Rp0</h3>
+            <small>Berdasarkan realisasi beranggaran</small>
+        </div>
+    </div>
 
-
-                <div class="summary-card purple-card">
-
-                    <div class="card-icon">
-                        A
-                    </div>
-
-                    <div>
-                        <p>Total Anggaran</p>
-                        <h3 id="total-anggaran">
-                            Rp0
-                        </h3>
-                    </div>
-
-                </div>
-
-
-                <div class="summary-card green-card">
-
-                    <div class="card-icon">
-                        R
-                    </div>
-
-                    <div>
-                        <p>Total Realisasi</p>
-                        <h3 id="total-realisasi">
-                            Rp0
-                        </h3>
-                    </div>
-
-                </div>
-
-
-                <div class="summary-card orange-card">
-
-                    <div class="card-icon">
-                        S
-                    </div>
-
-                    <div>
-                        <p>Sisa Anggaran</p>
-                        <h3 id="sisa-anggaran">
-                            Rp0
-                        </h3>
-                    </div>
-
-                </div>
-
-            </div>
+</div>
 
 
             <!-- PENGENDALIAN RINGKAS -->
@@ -795,24 +787,25 @@
 
                     <table>
 
-                        <thead>
+                        
+<thead>
+    <tr>
+        <th>No</th>
+        <th>Bahan</th>
+        <th>Periode Anggaran</th>
+        <th>Anggaran</th>
+        <th>Realisasi</th>
+        <th>Selisih</th>
+        <th>% Realisasi</th>
+        <th>Status</th>
+    </tr>
+</thead>
 
-                            <tr>
-                                <th>No</th>
-                                <th>Bahan</th>
-                                <th>Anggaran</th>
-                                <th>Realisasi</th>
-                                <th>Selisih</th>
-                                <th>% Realisasi</th>
-                                <th>Status</th>
-                            </tr>
-
-                        </thead>
 
                         <tbody id="pengendalian-table">
 
                             <tr>
-                                <td colspan="7"
+                                <td colspan="8"
                                     class="empty-state">
                                     Belum ada data pengendalian.
                                 </td>
@@ -828,6 +821,238 @@
 
         </section>
 
+        <!-- =================================================
+             PERSEDIAAN
+        ================================================== -->
+
+        <section id="persediaan" class="page">
+
+            <div class="page-header">
+                <div>
+                    <h2>▦ Persediaan</h2>
+                    <p>
+                        Pantau saldo awal, pembelian, pemakaian,
+                        dan stok akhir bahan salon.
+                    </p>
+                </div>
+            </div>
+
+            <div class="summary-grid">
+
+                <div class="summary-card pink-card">
+                    <div class="card-icon">S</div>
+                    <div>
+                        <p>Total Stok Akhir</p>
+                        <h3 id="total-stok-akhir">0</h3>
+                    </div>
+                </div>
+
+                <div class="summary-card purple-card">
+                    <div class="card-icon">N</div>
+                    <div>
+                        <p>Nilai Persediaan</p>
+                        <h3 id="nilai-persediaan">Rp0</h3>
+                    </div>
+                </div>
+
+                <div class="summary-card green-card">
+                    <div class="card-icon">M</div>
+                    <div>
+                        <p>Bahan Stok Menipis</p>
+                        <h3 id="bahan-stok-menipis">0</h3>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="content-card">
+
+                <div class="card-header">
+                    <div>
+                        <h2>Ringkasan Persediaan</h2>
+                        <p>
+                            Perhitungan berdasarkan saldo awal
+                            per 27 September 2026.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="table-wrapper">
+                    <table>
+                        
+
+<thead>
+    <tr>
+        <th>No</th>
+        <th>Nama Bahan</th>
+        <th>Satuan</th>
+        <th>Kuantitas Awal</th>
+        <th>Biaya per Unit Awal</th>
+        <th>Nilai Saldo Awal</th>
+        <th>Kuantitas Pembelian</th>
+        <th>Kuantitas Pemakaian</th>
+        <th>Stok Akhir</th>
+        <th>Biaya Rata-rata per Unit</th>
+        <th>Nilai Persediaan Akhir</th>
+        <th>Status Stok</th>
+    </tr>
+</thead>
+
+
+                        <tbody id="persediaan-table">
+    <tr>
+        <td colspan="11" class="empty-state">
+            Data persediaan sedang dimuat.
+        </td>
+    </tr>
+</tbody>
+                    </table>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =================================================
+             PEMAKAIAN BAHAN
+        ================================================== -->
+
+        <section id="pemakaian" class="page">
+
+            <div class="page-header">
+                <div>
+                    <h2>✂ Pemakaian Bahan</h2>
+                    <p>
+                        Catat penggunaan bahan habis pakai
+                        untuk operasional salon.
+                    </p>
+                </div>
+
+                <button class="primary-button"
+                        onclick="openPemakaianForm()">
+                    + Tambah Pemakaian
+                </button>
+            </div>
+
+            <!-- FORM PEMAKAIAN -->
+
+            <div id="pemakaian-form"
+                 class="content-card form-card hidden">
+
+                <h3 id="pemakaian-form-title">Tambah Pemakaian Bahan</h3>
+
+                <form id="form-pemakaian">
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label for="tanggal-pemakaian">
+                                Tanggal
+                            </label>
+
+                            <input type="date"
+                                   id="tanggal-pemakaian"
+                                   required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pemakaian-bahan">
+                                Nama Bahan
+                            </label>
+
+                            <select id="pemakaian-bahan"
+                                    required>
+                                <option value="">
+                                    Pilih bahan
+                                </option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="qty-pemakaian">
+                                Jumlah Pemakaian
+                            </label>
+
+                            <input type="number"
+                                   id="qty-pemakaian"
+                                   min="0.01"
+                                   step="0.01"
+                                   placeholder="Masukkan jumlah"
+                                   required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="keterangan-pemakaian">
+                                Keterangan
+                            </label>
+
+                            <input type="text"
+                                   id="keterangan-pemakaian"
+                                   placeholder="Contoh: Pemakaian layanan salon">
+                        </div>
+
+                    </div>
+
+                    <div class="form-actions">
+
+                        <button type="submit"
+                                class="primary-button">
+                            Simpan Pemakaian
+                        </button>
+
+                        <button type="button"
+                                class="secondary-button"
+                                onclick="closePemakaianForm()">
+                            Batal
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+            <!-- TABEL PEMAKAIAN -->
+
+            <div class="content-card">
+
+                <div class="card-header">
+                    <div>
+                        <h2>Riwayat Pemakaian</h2>
+                        <p>
+                            Daftar penggunaan bahan yang telah dicatat.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="table-wrapper">
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Tanggal</th>
+                                <th>Nama Bahan</th>
+                                <th>Jumlah</th>
+                                <th>Keterangan</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="pemakaian-table">
+                            <tr>
+                                <td colspan="6" class="empty-state">
+                                    Belum ada data pemakaian.
+                                </td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+
+            </div>
+
+        </section>
 
         <!-- =================================================
              LAPORAN
